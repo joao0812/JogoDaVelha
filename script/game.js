@@ -26,34 +26,32 @@ function handleMove(position) {
 }
 
 function isWin() {
-    for (let i = 0; i < 9; i += 3) {
-        if (board[i] === board[i + 1] && board[i] === board[i + 2] && board[i] !== "") {
-            janela[i].style.backgroundColor = 'green';
-            janela[i + 1].style.backgroundColor = 'green';
-            janela[i + 2].style.backgroundColor = 'green';
+    let condWind = [
+        [0,1,2],
+        [3,4,5],
+        [6,7,8],
+        [0,3,6],
+        [2,4,7],
+        [3,5,8],
+        [0,4,8],
+        [2,4,6]
+    ]
+    for (let i = 0; i < condWind.length; i++) {
+        let seq = condWind[i]
+
+        let pos1 = seq[0]
+        let pos2 = seq[1]
+        let pos3 = seq[2]
+
+
+        if (board[pos1] === board[pos2] && board[pos1] === board[pos3] && board[pos1] !== "") {
+            janela[pos1].style.backgroundColor = 'green';
+            janela[pos2].style.backgroundColor = 'green';
+            janela[pos3].style.backgroundColor = 'green';
             return true
         }
     }
-    for (let i = 0; i < 3; i++) {
-        if (board[i] === board[i + 3] && board[i] === board[i + 6] && board[i] !== "") {
-            janela[i].style.backgroundColor = 'green';
-            janela[i + 3].style.backgroundColor = 'green';
-            janela[i + 6].style.backgroundColor = 'green';
-            return true
-        }
-    }
-    if (board[0] === board[4] && board[0] === board[8] && board[0] !== "") {
-        janela[0].style.backgroundColor = 'green';
-        janela[4].style.backgroundColor = 'green';
-        janela[8].style.backgroundColor = 'green';
-        return true
-    }
-    if (board[2] === board[4] && board[2] === board[6] && board[2] !== "") {
-        janela[2].style.backgroundColor = 'green';
-        janela[4].style.backgroundColor = 'green';
-        janela[6].style.backgroundColor = 'green';
-        return true
-    }
+    
 
     if (!board.includes('')) {
         return true
