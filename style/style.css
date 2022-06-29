@@ -60,3 +60,16 @@ body {
     content: '\2B55';
     font-size: 90px;
 }
+
+button {
+    width: 90px;
+    height: 35px;
+    margin-top: 15px;
+    border-radius: 15px;
+    background-color: rgb(44, 209, 214);
+    font-weight: 900;
+}
+button:hover {
+    background-color: rgb(134, 220, 223);
+}
+

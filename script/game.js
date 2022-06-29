@@ -5,8 +5,6 @@ let symbol = ['o', 'x']
 let gameOver = false
 
 const janela = document.querySelectorAll('.containerMarca')
-console.log(janela[0])
-
 
 function handleMove(position) {
     if (gameOver) {
@@ -27,14 +25,14 @@ function handleMove(position) {
 
 function isWin() {
     let condWind = [
-        [0,1,2],
-        [3,4,5],
-        [6,7,8],
-        [0,3,6],
-        [2,4,7],
-        [3,5,8],
-        [0,4,8],
-        [2,4,6]
+        [0, 1, 2],
+        [3, 4, 5],
+        [6, 7, 8],
+        [0, 3, 6],
+        [1, 4, 7],
+        [2, 5, 8],
+        [0, 4, 8],
+        [2, 4, 6]
     ]
     for (let i = 0; i < condWind.length; i++) {
         let seq = condWind[i]
@@ -51,9 +49,5 @@ function isWin() {
             return true
         }
     }
-    
 
-    if (!board.includes('')) {
-        return true
-    }
 }
