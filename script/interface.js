@@ -1,4 +1,93 @@
-const janela11 = document.getElementById('cont-11')
+document.addEventListener('DOMContentLoaded', () => {
+
+    let janela = document.querySelectorAll('.containerMarca')
+
+    janela.forEach(element => {
+        element.addEventListener('click', handleClick)
+    });
+
+})
+
+function handleClick(event) {
+    let janela = event.target 
+    let position = janela.id
+
+    handleMove(position)
+    uptadeJanela()
+}
+
+function uptadeJanela(){
+    let janela = document.querySelectorAll('.containerMarca')
+
+    janela.forEach(element => {
+        let position = element.id
+        let symbol = board[position]
+        if (symbol !== "") {
+            element.classList.add(`${symbol}`)
+        }
+    })
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* const janela11 = document.getElementById('cont-11')
 const janela12 = document.getElementById('cont-12')
 const janela13 = document.getElementById('cont-13')
 const janela21 = document.getElementById('cont-21')
@@ -140,4 +229,4 @@ function verificaJogador(evento) {
     verificaVencedor(evento)
 }
 
-janela.forEach(element => element.addEventListener('click', verificaJogador))
+janela.forEach(element => element.addEventListener('click', verificaJogador)) */

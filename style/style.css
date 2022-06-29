@@ -1,0 +1,62 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #BCECF0;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.tittle {
+    margin-bottom: 50px;
+}
+
+.containerJogo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 670px;
+    height: 636px;
+    background-color: black;
+
+}
+
+.tabuleiro {
+    display: flex;
+    flex-direction: row;
+}
+
+.containerMarca {
+    width: 220px;
+    height: 208px;
+    margin: 3px;
+    background-color: cadetblue;
+    position: relative;
+}
+.x {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.x:after {
+    content: '\274C';
+    font-size: 90px;
+}
+.o {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.o:after {
+    content: '\2B55';
+    font-size: 90px;
+}
