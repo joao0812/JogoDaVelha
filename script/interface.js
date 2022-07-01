@@ -34,6 +34,7 @@ function restart() {
     playerTime = 0;
     gameOver = false
     let janela = document.querySelectorAll('.containerMarca')
+    titulo.innerText = ''
     janela.forEach(element => {
         if(element.classList.length > 1) {
             element.classList.remove('x')
