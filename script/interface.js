@@ -37,6 +37,7 @@ function restart() {
     janela.forEach(element => {
         if(element.classList.length > 1) {
             element.classList.remove('x')
+            element.classList.remove('win')
             element.classList.remove('o')
             element.style.backgroundColor = '#daa520'
         }

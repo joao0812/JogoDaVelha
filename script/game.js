@@ -45,10 +45,10 @@ function isWin() {
 
         if (board[pos1] === board[pos2] && board[pos1] === board[pos3] && board[pos1] !== "") {
             setTimeout(() => {
-                janela[pos1].style.backgroundColor = 'green';
-                janela[pos2].style.backgroundColor = 'green';
-                janela[pos3].style.backgroundColor = 'green';
-            }, 500)
+                janela[pos1].classList.add('win');
+                janela[pos2].classList.add('win');
+                janela[pos3].classList.add('win');
+            }, 400)
             return true
         }
     }
