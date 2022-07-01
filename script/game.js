@@ -1,0 +1,59 @@
+// Iniciando as variáveis
+let board = ['', '', '', '', '', '', '', '', '']
+let playerTime = 0;
+let symbol = ['o', 'x']
+let gameOver = false
+
+const janela = document.querySelectorAll('.containerMarca')
+const titulo = document.getElementById('tittle')
+
+function handleMove(position) {
+    if (gameOver) {
+        return;
+    }
+    if (board[position] == '') {
+        board[position] = symbol[playerTime]
+
+        gameOver = isWin()
+
+        if (playerTime == 0) {
+            playerTime = 1
+        } else {
+            playerTime = 0
+        }
+    }
+}
+
+function isWin() {
+    let condWind = [
+        [0, 1, 2],
+        [3, 4, 5],
+        [6, 7, 8],
+        [0, 3, 6],
+        [1, 4, 7],
+        [2, 5, 8],
+        [0, 4, 8],
+        [2, 4, 6]
+    ]
+    for (let i = 0; i < condWind.length; i++) {
+        let seq = condWind[i]
+
+        let pos1 = seq[0]
+        let pos2 = seq[1]
+        let pos3 = seq[2]
+
+
+        if (board[pos1] === board[pos2] && board[pos1] === board[pos3] && board[pos1] !== "") {
+            setTimeout(() => {
+                janela[pos1].classList.add('win');
+                janela[pos2].classList.add('win');
+                janela[pos3].classList.add('win');
+            }, 400)
+            return true
+        }
+    }
+    if (!board.includes("")) {
+        titulo.innerText = "DEU VELHA\n\n"
+    }
+
+}

@@ -1,0 +1,177 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Poppins:wght@300&family=Rubik+Mono+One&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #141114d5;
+    background-image: linear-gradient(335deg, black 23px, transparent 23px),
+        linear-gradient(155deg, black 23px, transparent 23px),
+        linear-gradient(335deg, black 23px, transparent 23px),
+        linear-gradient(155deg, black 23px, transparent 23px);
+    background-size: 58px 58px;
+    background-position: 0px 2px, 4px 35px, 29px 31px, 34px 6px;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.tittle {
+    margin-bottom: 25px;
+}
+
+.containerJogo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 670px;
+    height: 636px;
+    background-color: #ff7dff5e;
+    border-radius: 25px;
+    box-shadow: 0px 0px 150px #ff7dffaf;
+
+}
+
+.tabuleiro {
+    display: flex;
+    flex-direction: row;
+}
+
+.containerMarca {
+    width: 220px;
+    height: 208px;
+    margin: 3px;
+    background-color: #daa520; /* daa520 */
+    box-shadow: inset 0 0 15px #ff7dffaf, 0px 0px 15px #ff7dff50;
+    border-radius: 25px;
+    position: relative;
+}
+
+.win {
+    animation: piscaWin 0.6s 3 linear forwards; /* nome tempo repeições progreção manteio último frame */
+}
+
+@keyframes piscaWin {
+    0% {
+        background-color: #00ff00;
+    }
+    25% {
+        background-color: #daa520;
+    }
+    50% {
+        background-color: #00ff00;
+    }
+    75% {
+        background-color: #daa520;
+    }
+    100% {
+        background-color: #00ff00;
+    }
+}
+
+.x {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.x:after {
+    content: 'X';
+    animation: bounce-in-bck 0.8s both;
+    font-family: 'Rubik Mono One', sans-serif;
+    font-size: 190px;
+    background-color: #70707046;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-shadow: rgba(255, 255, 255, 0.3) 0px 3px 3px;
+
+}
+
+.o {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.o:after {
+    content: 'O';
+    animation: bounce-in-bck 0.8s both;
+    font-family: 'Rubik Mono One', sans-serif;
+    font-size: 190px;
+    background-color: #70707046;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-shadow: 0 3px 3px rgba(255, 255, 255, 0.3);
+}
+
+@keyframes bounce-in-bck {
+    0% {
+        transform: scale(7);
+        animation-timing-function: ease-in;
+        opacity: 0;
+    }
+
+    38% {
+        transform: scale(1);
+        animation-timing-function: ease-out;
+        opacity: 1;
+
+    }
+
+    55% {
+        transform: scale(1.5);
+        animation-timing-function: ease-in;
+    }
+
+    72% {
+        transform: scale(1);
+        animation-timing-function: ease-out;
+    }
+
+    81% {
+        transform: scale(1.24);
+        animation-timing-function: ease-in;
+    }
+
+    89% {
+        transform: scale(1);
+        animation-timing-function: ease-out;
+    }
+
+    95% {
+        transform: scale(1.04);
+        animation-timing-function: ease-in;
+    }
+
+    100% {
+        transform: scale(1);
+        animation-timing-function: ease-out;
+
+
+    }
+}
+
+button {
+    width: 90px;
+    height: 35px;
+    margin-top: 15px;
+    border-radius: 15px;
+    background-color: rgb(44, 209, 214);
+    font-weight: 900;
+}
+
+button:hover {
+    background-color: rgb(134, 220, 223);
+}
