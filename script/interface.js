@@ -38,7 +38,7 @@ function restart() {
         if(element.classList.length > 1) {
             element.classList.remove('x')
             element.classList.remove('o')
-            element.style.backgroundColor = 'cadetblue'
+            element.style.backgroundColor = '#daa520'
         }
     })
 }

@@ -44,14 +44,16 @@ function isWin() {
 
 
         if (board[pos1] === board[pos2] && board[pos1] === board[pos3] && board[pos1] !== "") {
-            janela[pos1].style.backgroundColor = 'green';
-            janela[pos2].style.backgroundColor = 'green';
-            janela[pos3].style.backgroundColor = 'green';
+            setTimeout(() => {
+                janela[pos1].style.backgroundColor = 'green';
+                janela[pos2].style.backgroundColor = 'green';
+                janela[pos3].style.backgroundColor = 'green';
+            }, 500)
             return true
         }
-    } 
+    }
     if (!board.includes("")) {
-        titulo.innerText += "DEU VELHA\n\n"
+        titulo.innerText = "DEU VELHA\n\n"
     }
 
 }
