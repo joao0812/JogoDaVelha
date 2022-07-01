@@ -5,6 +5,7 @@ let symbol = ['o', 'x']
 let gameOver = false
 
 const janela = document.querySelectorAll('.containerMarca')
+const titulo = document.getElementById('tittle')
 
 function handleMove(position) {
     if (gameOver) {
@@ -48,6 +49,9 @@ function isWin() {
             janela[pos3].style.backgroundColor = 'green';
             return true
         }
+    } 
+    if (!board.includes("")) {
+        titulo.innerText += "DEU VELHA\n\n"
     }
 
 }
